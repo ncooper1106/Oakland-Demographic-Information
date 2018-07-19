@@ -1,0 +1,76 @@
+/* Declaring CSS Variables with our color scheme */
+:root {
+  --bg: #78BDA8;
+  --bar: #5B9B97;
+  --barAlt: #619082;
+}
+
+/* Seting up the page background */
+body {
+  background: var(--bg);
+  margin: 0px;
+}
+
+/* Creates a template for the columns / rows of our grid layout */
+.Container {
+  display: grid;
+  grid-template-rows: 100px 500px;
+}
+
+/* Setting up basic characterists of the header */
+.Container-header {
+  background: #49757A;
+  color: white;
+  grid-row: 1;
+  text-align: center;
+  height: 100px;
+}
+
+/* Vertically center the div element in the header */
+.Container-header div
+{
+  height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
+  font-size: 32px;
+}
+
+/* Set up the orientation and spacing of the BarChart area */
+.BarChart {
+  grid-row: 2;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right:100px;
+  border-bottom: 1px solid black;
+}
+
+/* Dimensions for each indiviual bar */
+.BarChart-bar {
+  background-color: var(--bar);
+  font-size: 20px;
+  color: white;
+  width: 125px;
+  text-align: center;
+  border: 1px solid black;
+  padding-top: 10px;
+
+  transition: color 1s,
+              background-color 1s,
+              border 1s;
+}
+
+/* Alternate coloring visual effect */
+.BarChart-bar:nth-child(odd) {
+  background-color: var(--barAlt);
+}
+
+/* Creating the hover annimation */
+.BarChart-bar:hover {
+  color: yellow;
+  background-color: #89bab7;
+  border: 2px solid yellow;
+}
